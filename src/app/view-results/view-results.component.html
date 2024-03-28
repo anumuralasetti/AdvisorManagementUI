@@ -1,0 +1,23 @@
+<div class="viewresultsDiv">
+  <h2 class="allresults">List of All Results</h2> 
+ <div class="viewresults">
+     <table mat-table [dataSource]="results" class="mat-elevation-z8 custom-mat-table">
+ 
+         <ng-container matColumnDef="Course">
+           <th class="table-Header" mat-header-cell *matHeaderCellDef> Course </th>
+           <td class="table-Data" mat-cell *matCellDef="let result"> {{result.course.course_Name}}  </td>
+         </ng-container>
+         <ng-container matColumnDef="Student">
+           <th class="table-Header" mat-header-cell *matHeaderCellDef> Student </th>
+           <td class="table-Data" mat-cell *matCellDef="let result"> {{result.student.first_Name}} {{result.student.family_Name}}  </td>
+         </ng-container>
+         <ng-container matColumnDef="score">
+           <th class="table-Header" mat-header-cell *matHeaderCellDef> score </th>
+           <td class="table-Data" mat-cell *matCellDef="let result"> {{result.score}} </td>
+         </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       </table>
+ </div>
+ </div>
+ 

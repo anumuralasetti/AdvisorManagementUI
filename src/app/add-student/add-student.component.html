@@ -1,0 +1,45 @@
+<div class="main">
+  <h2>Add new Student</h2>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" #f="ngForm"  class="student-form">
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="first_Name">
+        <mat-error *ngIf="studentForm.get('first_Name')?.invalid && studentForm.get('first_Name')?.touched">First Name is required.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Family Name</mat-label>
+        <input matInput formControlName="family_Name">
+        <mat-error *ngIf="studentForm.get('family_Name')?.invalid && studentForm.get('family_Name')?.touched">Family Name is required.</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="studentForm.get('dob')?.invalid && studentForm.get('dob')?.touched">
+          <span *ngIf="studentForm.get('dob')?.errors?.['required']">Date of Birth is required.</span>
+          <span *ngIf="studentForm.get('dob')?.errors?.['ageInvalid']">Age must be greater than 10 years.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email">
+        <mat-error *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
+          <span *ngIf="studentForm.get('email')?.errors?.['required']">Email is required.</span>
+          <span *ngIf="studentForm.get('email')?.errors?.['pattern']">Invalid email format.</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-flat-button type="submit" [disabled]="!studentForm.valid" color="primary">Submit</button>
+  </form>
+</div>
