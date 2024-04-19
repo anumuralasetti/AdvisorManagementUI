@@ -1,0 +1,43 @@
+<div class="viewAdvisorsDiv">
+    <h2 class="allAdvisors">List of All Advisors</h2> 
+    <div class="viewAdvisors">
+      <table mat-table [dataSource]="advisors" class="mat-elevation-z8 custom-mat-table">
+  
+        <ng-container matColumnDef="Name">
+          <th class="table-Header" mat-header-cell *matHeaderCellDef> Name </th>
+          <td class="table-Data" mat-cell *matCellDef="let advisor"> {{advisor.name}}  </td>
+        </ng-container>
+        <ng-container matColumnDef="SIN">
+            <th class="table-Header" mat-header-cell *matHeaderCellDef> SIN </th>
+            <td class="table-Data" mat-cell *matCellDef="let advisor"> {{advisor.SIN}} </td>
+          </ng-container>
+        <ng-container matColumnDef="Address">
+          <th class="table-Header" mat-header-cell *matHeaderCellDef> Address </th>
+          <td class="table-Data" mat-cell *matCellDef="let advisor"> {{advisor.address}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Phone">
+          <th class="table-Header" mat-header-cell *matHeaderCellDef> Phone </th>
+          <td class="table-Data" mat-cell *matCellDef="let advisor"> {{advisor.phone}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Update">
+            <th class="table-Header" mat-header-cell *matHeaderCellDef> Update </th>
+            <td class="table-Data" mat-cell *matCellDef="let advisor">
+              <button mat-button  (click)="updateAdvisor()"><mat-icon>update</mat-icon></button>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Delete">
+            <th class="table-Header" mat-header-cell *matHeaderCellDef> Delete </th>
+            <td class="table-Data" mat-cell *matCellDef="let advisor">
+              <button mat-button color="warn" (click)="deleteAdvisor()"><mat-icon>delete_outline</mat-icon></button>
+            </td>
+          </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  

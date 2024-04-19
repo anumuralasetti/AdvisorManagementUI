@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddStudentComponent } from './add-student/add-student.component';
-import { ViewStudentsComponent } from './view-students/view-students.component';
-import { AddCourseComponent } from './add-course/add-course.component';
-import { ViewCoursesComponent } from './view-courses/view-courses.component';
-import { AddResultComponent } from './add-result/add-result.component';
-import { ViewResultsComponent } from './view-results/view-results.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { AddAdvisorComponent } from './components/add-advisor/add-advisor.component';
+import { ViewAdvisorComponent } from './components/view-advisor/view-advisor.component';
+import { ViewAllAdvisorsComponent } from './components/view-all-advisors/view-all-advisors.component';
+import { UpdateAdvisorComponent } from './components/update-advisor/update-advisor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'add-students', component: AddStudentComponent },
-  {path: 'view-students', component: ViewStudentsComponent },
-  {path: 'add-course', component: AddCourseComponent },
-  {path: 'view-courses', component: ViewCoursesComponent },
-  {path: 'add-result', component: AddResultComponent },
-  {path: 'view-results', component: ViewResultsComponent }];
+  { path: 'add-advisor', component: AddAdvisorComponent },
+  {path: 'view-advisor', component: ViewAdvisorComponent },
+  {path: 'view-alladvisors', component: ViewAllAdvisorsComponent },
+  {path: 'update-advisor', component: UpdateAdvisorComponent }];
 
 
 @NgModule({

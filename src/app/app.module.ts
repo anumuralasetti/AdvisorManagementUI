@@ -4,12 +4,6 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddStudentComponent } from './add-student/add-student.component';
-import { ViewStudentsComponent } from './view-students/view-students.component';
-import { AddCourseComponent } from './add-course/add-course.component';
-import { ViewCoursesComponent } from './view-courses/view-courses.component';
-import { AddResultComponent } from './add-result/add-result.component';
-import { ViewResultsComponent } from './view-results/view-results.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -44,18 +38,20 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { AddAdvisorComponent } from './components/add-advisor/add-advisor.component';
+import { ViewAdvisorComponent } from './components/view-advisor/view-advisor.component';
+import { ViewAllAdvisorsComponent } from './components/view-all-advisors/view-all-advisors.component';
+import { UpdateAdvisorComponent } from './components/update-advisor/update-advisor.component';
 
 @NgModule({
   declarations: [	
     AppComponent,
-    AddStudentComponent,
-    ViewStudentsComponent,
-    AddCourseComponent,
-    ViewCoursesComponent,
-    AddResultComponent,
-    ViewResultsComponent,
-      HomeComponent
+      HomeComponent,
+      AddAdvisorComponent,
+      ViewAdvisorComponent,
+      ViewAllAdvisorsComponent,
+      UpdateAdvisorComponent
    ],
   imports: [
     BrowserModule,
@@ -100,7 +96,8 @@ import { HomeComponent } from './home/home.component';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule
 
   ],
   providers: [

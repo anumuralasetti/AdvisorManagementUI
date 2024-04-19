@@ -2,7 +2,7 @@
   <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
-  <h1>Student Result Management</h1>
+  <h1>Advisor Management</h1>
 </mat-toolbar>
 <mat-sidenav-container autosize="true">
   <mat-sidenav [ngClass]="!isCollapsed ? 'expanded' : ''" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
@@ -13,40 +13,22 @@
           <span *ngIf="!isCollapsed">Home</span>
         </span>
       </a>
-      <a mat-list-item routerLink="/add-students">
+      <a mat-list-item routerLink="/add-advisor">
         <span class="entry">
           <mat-icon>add</mat-icon>
-          <span *ngIf="!isCollapsed">Add New Students</span>
+          <span *ngIf="!isCollapsed">Add New Advisor</span>
         </span>
       </a>
       <a mat-list-item>
-        <span class="entry" routerLink="/view-students">
+        <span class="entry" routerLink="/view-advisor">
+          <mat-icon>find_in_page</mat-icon>
+          <span *ngIf="!isCollapsed">View Advisor</span>
+        </span>
+      </a>
+      <a mat-list-item>
+        <span class="entry" routerLink="/view-alladvisors">
           <mat-icon>table_view</mat-icon>
-          <span *ngIf="!isCollapsed">Students List</span>
-        </span>
-      </a>
-      <a mat-list-item>
-        <span class="entry" routerLink="/add-course">
-          <mat-icon>add_circle</mat-icon>
-          <span *ngIf="!isCollapsed">Add New Courses</span>
-        </span>
-      </a>
-      <a mat-list-item routerLink="/view-courses">
-        <span class="entry">
-          <mat-icon>grid_view</mat-icon>
-          <span *ngIf="!isCollapsed">Courses List</span>
-        </span>
-      </a>
-      <a mat-list-item routerLink="/add-result">
-        <span class="entry">
-          <mat-icon>add_task</mat-icon>
-          <span *ngIf="!isCollapsed">Add New Results</span>
-        </span>
-      </a>
-      <a mat-list-item routerLink="/view-results">
-        <span class="entry">
-          <mat-icon>view_list</mat-icon>
-          <span *ngIf="!isCollapsed">Results List</span>
+          <span *ngIf="!isCollapsed">Advisors List</span>
         </span>
       </a>
     </mat-nav-list>

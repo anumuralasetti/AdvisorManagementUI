@@ -1,7 +1,0 @@
-.custom-mat-table {
-    width: 150%; 
-    @media (max-width: 600px) {
-        width: 90%; 
-    }
-}
-

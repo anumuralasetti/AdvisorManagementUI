@@ -1,0 +1,35 @@
+<div class="main">
+    <h2>Add new Advisor</h2>
+    <form [formGroup]="advisorForm" (ngSubmit)="onSubmit()" #f="ngForm"  class="student-form">
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="Name">
+          <mat-error *ngIf="advisorForm.get('Name')?.invalid && advisorForm.get('Name')?.touched">Name is required.</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>SIN</mat-label>
+          <input matInput formControlName="SIN" maxlength="9" minlength="9">
+          <mat-error *ngIf="advisorForm.get('SIN')?.invalid && advisorForm.get('SIN')?.touched">SIN is required.</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="Address">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="Phone" maxlength="10" minlength="10">
+        </mat-form-field>
+      </div>
+      <button mat-flat-button type="submit" [disabled]="!advisorForm.valid" color="primary">Submit</button>
+    </form>
+  </div>
+  

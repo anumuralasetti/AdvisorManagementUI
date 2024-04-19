@@ -1,0 +1,41 @@
+<div class="updateAdvisor">
+    <div class="studentDropdown">
+        <mat-form-field appearance="fill">
+          <mat-label>Select Advisor:</mat-label>
+          <mat-select formControlName="course" placeholder="Select">
+            <mat-option *ngFor="let advisor of advisors" [value]="advisor.id">{{ advisor.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <form [formGroup]="advisorForm" (ngSubmit)="onSubmit()" #f="ngForm"  class="student-form">
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="Name" [(ngModel)]="name">
+            <mat-error *ngIf="advisorForm.get('Name')?.invalid && advisorForm.get('Name')?.touched">Name is required.</mat-error>
+          </mat-form-field>
+        </div>
+    
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>SIN</mat-label>
+            <input matInput formControlName="SIN" maxlength="9" minlength="9"  [(ngModel)]="SIN">
+            <mat-error *ngIf="advisorForm.get('SIN')?.invalid && advisorForm.get('SIN')?.touched">SIN is required.</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="Address" [(ngModel)]="address">
+          </mat-form-field>
+        </div>
+    
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="Phone" maxlength="10" minlength="10"  [(ngModel)]="phone">
+          </mat-form-field>
+        </div>
+        <button mat-flat-button type="submit" [disabled]="!advisorForm.valid" color="primary">Update</button>
+      </form>
+</div>
